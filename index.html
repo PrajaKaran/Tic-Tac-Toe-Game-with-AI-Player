@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Critical for Android/Mobile compatibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Tic-Tac-Toe AI</title>
+    
+    <!-- SEO and PWA properties -->
+    <meta name="description" content="Play Tic-Tac-Toe against an unbeatable Minimax AI.">
+    <meta name="theme-color" content="#0f172a">
+    
+    <!-- Google Fonts for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TIC-TAC-TOE</h1>
+            <p class="subtitle">Minimax AI Engine</p>
+        </header>
+
+        <div class="scoreboard">
+            <div class="score-card player">
+                <span class="label">YOU (X)</span>
+                <span id="score-player" class="score">0</span>
+            </div>
+            <div class="score-card draws">
+                <span class="label">DRAWS</span>
+                <span id="score-draws" class="score">0</span>
+            </div>
+            <div class="score-card ai">
+                <span class="label">AI (O)</span>
+                <span id="score-ai" class="score">0</span>
+            </div>
+        </div>
+
+        <div class="status-container">
+            <h2 id="status-text">Your Turn</h2>
+        </div>
+
+        <div class="board-container">
+            <div class="board" id="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            <!-- SVG Line for winning animation -->
+            <svg id="winning-line-svg" class="winning-line-svg">
+                <line id="winning-line" x1="0" y1="0" x2="0" y2="0" stroke="#fbbf24" stroke-width="8" stroke-linecap="round" />
+            </svg>
+        </div>
+
+        <div class="controls">
+            <div class="difficulty-selector">
+                <label for="difficulty">AI Level:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="hard" selected>Unbeatable</option>
+                </select>
+            </div>
+            <button id="reset-btn" class="reset-btn">New Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
